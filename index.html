@@ -13,6 +13,7 @@
     <canvas id="canvas1" width="300" height="300">对不起！ 请升级浏览器</canvas>
 
     <script type="text/javascript">
+    //https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
     // 绘图
     var canvas1 = document.querySelector('#canvas1').getContext('2d')
     // 填充颜色
@@ -31,6 +32,22 @@
     canvas1.strokeRect(30, 30, 10, 10)
 
     // 绘制路径
+    canvas1.beginPath()
+    // 设置初始绘图的坐标  从这个点出发
+    canvas1.moveTo(100, 70)
+    //画线
+    canvas1.lineTo(200, 70)
+    canvas1.lineTo(200, 120)
+    canvas1.fill()
+    //关闭路径
+    canvas1.closePath()
+
+    canvas1.fillStyle = 'rgba(200, 0, 0)'
+    canvas1.beginPath()
+    canvas1.moveTo(250, 200)
+    canvas1.arc(200, 200, 50, 0, Math.PI*2, true)
+    canvas1.stroke()
+    canvas1.closePath()
     </script>
   </body>
 </html>
